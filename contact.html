@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f0e7">
+  <title>Contact | Small Acts, Strong Habits</title>
+  <style>
+    :root { --ink:#24352f; --muted:#65736c; --paper:#fbf8f2; --green:#315d4b; --gold:#d5a85f; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:flex; flex-direction:column; color:var(--ink); background:var(--paper); font-family:Georgia,"Times New Roman",serif; line-height:1.6; }
+    nav { display:flex; justify-content:center; padding:16px 20px; background:var(--green); }
+    nav a { color:#fffaf0; text-decoration:none; font:700 .9rem Arial,sans-serif; padding:8px 14px; border:1px solid rgba(255,255,255,.35); border-radius:999px; }
+    nav a:hover { background:rgba(255,255,255,.12); }
+    header { padding:65px 20px 45px; text-align:center; background:linear-gradient(135deg,#edf2e9,#fbf8f2 75%); }
+    .eyebrow { margin:0 0 12px; color:var(--green); font:700 .76rem Arial,sans-serif; letter-spacing:.2em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(2.6rem,7vw,4.5rem); font-weight:500; letter-spacing:-.04em; line-height:1.1; }
+    header p { max-width:560px; margin:18px auto 0; color:var(--muted); }
+    main { width:min(640px,calc(100% - 36px)); margin:0 auto 55px; padding-top:38px; }
+    .contact-card { padding:clamp(26px,5vw,44px); border:1px solid #e5e0d5; border-radius:20px; background:#fffdf9; box-shadow:0 12px 34px rgba(36,53,47,.06); text-align:center; }
+    .pin { display:grid; place-items:center; width:64px; height:64px; margin:0 auto 20px; border-radius:50%; background:#edf3eb; color:var(--green); font-size:1.8rem; }
+    h2 { margin:0 0 8px; font-size:1.8rem; font-weight:500; }
+    .label { margin:22px 0 6px; color:#a17a3f; font:700 .75rem Arial,sans-serif; letter-spacing:.15em; text-transform:uppercase; }
+    address { color:var(--green); font-size:clamp(1.35rem,4vw,1.8rem); font-style:normal; }
+    .back { display:inline-block; margin-top:26px; padding:12px 19px; border-radius:999px; background:var(--green); color:white; text-decoration:none; font:700 .9rem Arial,sans-serif; }
+    .back:hover { background:#244737; }
+    footer { margin-top:auto; padding:25px 20px 35px; color:var(--muted); text-align:center; font:.82rem Arial,sans-serif; }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation"><a href="/index.html">Home</a></nav>
+  <header>
+    <p class="eyebrow">Get in touch</p>
+    <h1>Contact</h1>
+    <p>Thanks for visiting. Here is the address information.</p>
+  </header>
+  <main>
+    <section class="contact-card">
+      <div class="pin" aria-hidden="true">⌖</div>
+      <h2>Address</h2>
+      <p class="label">Location</p>
+      <address>Dithi, 5B</address>
+       <p class="label"<a href="mailto:dithi@dithi.us"> 📨 Email me: dithi@dithi.us </a></p>
+      <a class="back" href="/index.html">← Back to the main page</a>
+    </section>
+  </main>
+  <footer>Made with purpose • One small step at a time</footer>
+</body>
+</html>

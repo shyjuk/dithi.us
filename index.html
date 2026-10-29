@@ -1,0 +1,261 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f0e7">
+  <title>Small Acts, Strong Habits</title>
+  <style>
+    :root { --ink:#24352f; --muted:#65736c; --paper:#fbf8f2; --green:#315d4b; --gold:#d5a85f; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:flex; flex-direction:column; color:var(--ink); background:var(--paper); font-family:Georgia,"Times New Roman",serif; line-height:1.6; }
+    nav { display:flex; justify-content:center; padding:16px 20px; background:var(--green); }
+    nav a { color:#fffaf0; text-decoration:none; font:700 .9rem Arial,sans-serif; padding:8px 14px; border:1px solid rgba(255,255,255,.35); border-radius:999px; }
+    nav a:hover { background:rgba(255,255,255,.12); }
+    header { padding:65px 20px 45px; text-align:center; background:linear-gradient(135deg,#edf2e9,#fbf8f2 75%); }
+    
+    .hero {
+      padding: 76px 22px 62px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top left, rgba(213,168,95,.18), transparent 42%),
+        linear-gradient(135deg, #edf2e9, #fbf8f2 68%);
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--green);
+      font: 700 .76rem/1.4 Arial, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 850px;
+      margin: 0 auto 18px;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2vw, 1.2rem);
+    }
+    .rule {
+      width: 66px;
+      height: 3px;
+      margin: 28px auto 0;
+      background: var(--gold);
+      border-radius: 5px;
+    }
+    main { width: min(1100px, calc(100% - 36px)); margin: 0 auto; }
+    .intro {
+      max-width: 740px;
+      margin: 55px auto 34px;
+      text-align: center;
+    }
+    .intro h2, .reflection h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+      font-weight: 500;
+    }
+    .intro p { margin: 0; color: var(--muted); }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+      margin: 34px 0 58px;
+    }
+    .card {
+      overflow: hidden;
+      border: 1px solid #e5e0d5;
+      border-radius: 18px;
+      background: #fffdf9;
+      box-shadow: 0 12px 34px rgba(36,53,47,.06);
+    }
+    .photo-wrap {
+      position: relative;
+      display: grid;
+      min-height: 300px;
+      aspect-ratio: 4 / 3;
+      place-items: center;
+      overflow: hidden;
+      background: linear-gradient(145deg, #e8eee5, #f3e8d7);
+    }
+    .photo-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+    }
+    .placeholder {
+      padding: 25px;
+      text-align: center;
+      color: #617368;
+    }
+    .placeholder .symbol { display: block; font-size: 2.7rem; margin-bottom: 8px; }
+    .placeholder strong { display: block; font-size: 1.15rem; font-weight: 500; }
+    .placeholder span { display: block; margin-top: 7px; font: .9rem/1.5 Arial, sans-serif; }
+    .card-body { padding: 25px 27px 28px; }
+    .number {
+      color: #a17a3f;
+      font: 700 .72rem/1.4 Arial, sans-serif;
+      letter-spacing: .15em;
+    }
+    h3 { margin: 8px 0 10px; font-size: 1.7rem; font-weight: 500; }
+    .card-body p { margin: 0 0 18px; color: var(--muted); }
+    .quote {
+      padding-left: 15px;
+      border-left: 3px solid var(--gold);
+      color: var(--green);
+      font-size: 1.08rem;
+      font-style: italic;
+    }
+    .reflection {
+      margin: 0 0 62px;
+      padding: clamp(28px, 5vw, 52px);
+      border-radius: 20px;
+      background: var(--green);
+      color: #fffaf0;
+      text-align: center;
+    }
+    .reflection h2 { color: #fffaf0; }
+    .reflection p { max-width: 680px; margin: 0 auto 20px; color: #e0e9df; }
+    .big-quote {
+      max-width: 760px;
+      margin: 25px auto 0;
+      color: #f2d7a6;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-style: italic;
+      line-height: 1.35;
+    }
+    footer {
+      padding: 25px 20px 35px;
+      color: var(--muted);
+      text-align: center;
+      font: .82rem/1.6 Arial, sans-serif;
+    }
+    @media (max-width: 720px) {
+      .hero { padding-top: 56px; }
+      .cards { grid-template-columns: 1fr; }
+      .photo-wrap { min-height: 240px; }
+      .card-body { padding: 22px; }
+    }
+    @media print {
+      body { background: white; }
+      .card, .reflection { break-inside: avoid; }
+    }
+
+        nav a { color:#fffaf0; text-decoration:none; font:700 .9rem Arial,sans-serif; padding:8px 14px; border:1px solid rgba(255,255,255,.35); border-radius:999px; }
+    nav a:hover { background:rgba(255,255,255,.12); }
+    header { padding:65px 20px 45px; text-align:center; background:linear-gradient(135deg,#edf2e9,#fbf8f2 75%); }
+    header p { max-width:560px; margin:18px auto 0; color:var(--muted); }
+    .eyebrow { margin:0 0 12px; color:var(--green); font:700 .76rem Arial,sans-serif; letter-spacing:.2em; text-transform:uppercase; }
+  </style>
+</head>
+<body>
+  
+<nav>
+    <a href="contact.html">Get in Touch</a>
+</nav>
+  
+  <header class="hero">
+    <p class="eyebrow">Everyday effort • Everyday growth</p>
+    <h1>Small Acts.<br>Strong Habits.</h1>
+    <p>A meaningful life is built in the little things we do each day—with care, patience, and pride in our own effort.</p>
+    <div class="rule"></div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Taking care of the little things</h2>
+      <p>Ironing a shirt or hanging clothes to dry may seem ordinary, but these simple tasks teach us responsibility, independence, and respect for the life we are building. Every small action is a quiet promise to take care of ourselves and our space.</p>
+    </section>
+
+    <section class="cards" aria-label="Everyday tasks and motivation">
+      <article class="card">
+        <div class="photo-wrap">
+          <img src="pics/ironing.jpg" alt="Me ironing clothes">
+        </div>
+        <div class="card-body">
+          <span class="number">01 / CARE &amp; DISCIPLINE</span>
+          <h3>Iron with care</h3>
+          <p>Taking time to iron my clothes is a simple way to prepare for the day ahead. It reminds me that presenting my best self begins with small, thoughtful actions.</p>
+          <div class="quote">“Excellence is the result of caring about the little things.”</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="photo-wrap">
+          <img src="pics/drying.jpg" alt="Me hanging clothes to dry">
+        </div>
+        <div class="card-body">
+          <span class="number">02 / PATIENCE &amp; GRATITUDE</span>
+          <h3>Hang clothes to dry</h3>
+          <p>Hanging clothes to dry is a reminder to slow down, use what I have wisely, and let time do its work. Progress doesn't always need to be rushed.</p>
+          <div class="quote">“Great things are done by a series of small things brought together.”</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="reflection">
+      <h2>Be proud of your everyday progress</h2>
+      <p>You don't need a special occasion to feel proud of yourself. Show up, do what needs to be done, and give ordinary moments your best effort. These habits may look small today, but over time they shape a more confident, capable, and independent you.</p>
+      <div class="big-quote">“It is not the mountain we conquer, but ourselves.”</div>
+    </section>
+
+      <section class="cards" aria-label="Domain From Cloudflare">
+      <article class="card" style="max-width: 600px; width: 100%;">
+        <div class="card-body">
+          <span class="number">Domain from Cloudflare</span>
+          <h3>Domain</h3>
+          <p>My domain, dithi.us, is managed through Cloudflare. It provides the web address where my personal website can be accessed online.</p>
+          <div class="quote"><a href="https://cloudflare.com"> Visit Cloudflare </a></div>
+        </div>
+      </article>
+
+      <article class="card" style="max-width: 600px; width: 100%;">
+        <div class="card-body">
+          <span class="number">Website hosted in Github </span>
+          <h3>Hosting</h3>
+          <p>My website, dithi.us, is hosted on GitHub, using GitHub Pages to publish my HTML content online. This allows me to share my personal website and showcase my work on the internet.</p>
+          <div class="quote"><a href="https://github.com"> Visit GitHub </a></div>
+        </div>
+      </article>
+    </section>
+
+      <article class="card" style="max-width: 1600px; width: 100%; padding:22px;">
+        <div class="card-body">
+          <span class="number">The Process I Followed to Host My Website  </span>
+          <h4>1. Purchased a Domain</h4>
+          <p>Created an account on Cloudflare and purchased the domain dithi.us </p>
+          <h4>2. Created My Website</h4>
+          <p>Created HTML files for my website.</p>
+          <p>Added two pictures showcasing everyday activities: ironing clothes with care and hanging clothes to dry.</p>
+          <p> Added three links: Cloudflare, GitHub, and a Contact page.</p>
+          <h4>3. Set Up GitHub Hosting</h4>
+          <p>Created an account on GitHub.</p>
+          <p>Created a repository to host my website.</p>
+          <p>Uploaded my HTML files to the repository.</p>
+          <h4>4. Connected My Domain</h4>
+          <p>Configured my domain through the repository settings to connect it to my hosted website.</p>
+          <p>Published my website using my custom domain: https://dithi.us.</p>
+        </div>
+      </article>
+    <p></p>
+    <nav>
+    <a href="contact.html">Get in Touch</a>
+    </nav>
+  </main>
+
+  
+  <footer>
+    Made with purpose • One small step at a time
+  </footer>
+
+
+</body>
+</html>
